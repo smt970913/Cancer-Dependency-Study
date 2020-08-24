@@ -37,25 +37,25 @@ Feature engineering has been done for improving the quality of the model outcome
   2. Overlap that with the genes and cell lines from CCLE
   3. Only consider RPPA, CNA, DNA methylation, and mRNA expression from the same set of cell lines.
   
- ### Machine Learning Model
- Train-test-split: training set (70% cancer cell lines), testing set (30% cancer cell lines).
- Regression methods: linear regression, random forest, conditional random forest.
- Baseline model: exclude failed predictions by using the averaged dependency score as the predicted values.
- Cross-validation training: 10-fold cross validation and repeated the procedure for 10 times to avoid model overfitting.
- Evaluation metrics: root-mean-square error (RMSE) and R<sup>2</sup>.
- Fearture importance analysis (varImp function in R with caret package):
- - **Linear regression**: the absolute value of the t-statistic for each model parameter is used.
- - **Random forest**: the MSE is computed on the out-of-bag data for each tree, and then the same computed after permuting a variable.
+### Machine Learning Model
+- Train-test-split: training set (70% cancer cell lines), testing set (30% cancer cell lines).
+- Regression methods: linear regression, random forest, conditional random forest.
+- Baseline model: exclude failed predictions by using the averaged dependency score as the predicted values.
+- Cross-validation training: 10-fold cross validation and repeated the procedure for 10 times to avoid model overfitting.
+- Evaluation metrics: root-mean-square error (RMSE) and R<sup>2</sup>.
+- Fearture importance analysis (varImp function in R with caret package):
+  - **Linear regression**: the absolute value of the t-statistic for each model parameter is used.
+  - **Random forest**: the MSE is computed on the out-of-bag data for each tree, and then the same computed after permuting a variable.
  
- ## Tools
+## Tools
  
- ### Paper
- R and Python
+### Paper
+R and Python
  
- ### Myself
- Python: scikit-learn (Lasso Regression), statsmodels (Lasso Regression, Linear Regression), CatBoost
- R: Shinyapp
+### Myself
+Python: scikit-learn (Lasso Regression), statsmodels (Lasso Regression, Linear Regression), CatBoost
+R: Shinyapp
  
- ## Paper and App
- - [Predicting Cancer Cell Line Dependencies From the Protein Expression Data of Reverse-Phase Protein Arrays](https://ascopubs.org/doi/10.1200/CCI.19.00144)
- - [Cancer Dependency Visualization](https://arsenalsun.shinyapps.io/Cancer_dependency/)
+## Paper and App
+- [Predicting Cancer Cell Line Dependencies From the Protein Expression Data of Reverse-Phase Protein Arrays](https://ascopubs.org/doi/10.1200/CCI.19.00144)
+- [Cancer Dependency Visualization](https://arsenalsun.shinyapps.io/Cancer_dependency/)
