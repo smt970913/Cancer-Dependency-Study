@@ -42,7 +42,7 @@ Feature engineering has been done for improving the quality of the model outcome
  Regression methods: linear regression, random forest, conditional random forest.
  Baseline model: exclude failed predictions by using the averaged dependency score as the predicted values.
  Cross-validation training: 10-fold cross validation and repeated the procedure for 10 times to avoid model overfitting.
- Evaluation metrics: root-mean-square error (RMSE) and $R^{2}$
+ Evaluation metrics: root-mean-square error (RMSE) and $$R^{2}$$.
  Fearture importance analysis (varImp function in R with caret package):
  - **Linear regression**: the absolute value of the t-statistic for each model parameter is used.
  - **Random forest**: the MSE is computed on the out-of-bag data for each tree, and then the same computed after permuting a variable.
@@ -57,5 +57,5 @@ Feature engineering has been done for improving the quality of the model outcome
  R: Shinyapp
  
  ## Paper and App
- [Predicting Cancer Cell Line Dependencies From the Protein Expression Data of Reverse-Phase Protein Arrays](https://ascopubs.org/doi/10.1200/CCI.19.00144)
- [Cancer Dependency Visualization](https://arsenalsun.shinyapps.io/Cancer_dependency/)
+ - [Predicting Cancer Cell Line Dependencies From the Protein Expression Data of Reverse-Phase Protein Arrays](https://ascopubs.org/doi/10.1200/CCI.19.00144)
+ - [Cancer Dependency Visualization](https://arsenalsun.shinyapps.io/Cancer_dependency/)
