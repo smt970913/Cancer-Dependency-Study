@@ -1,0 +1,216 @@
+---
+title: "Cancer_dependency"
+author: "Maotong Sun"
+date: "8/23/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r warning=FALSE, message=FALSE}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(ggthemes)
+library(readxl)
+library(GGally)
+library(caret)
+library(rpart)
+library(elasticnet)
+library(corrplot)
+library(naivebayes)
+library(DMwR)
+library(gbm)
+library(Cubist)
+library(earth)
+library(tensorflow)
+library(keras)
+library(tfdatasets)
+library(lubridate)
+library(zoo)
+library(Hmisc)
+library(xgboost)
+library(matrixStats)
+library(doParallel)
+
+options(digits=4)
+set.seed(248)
+```
+
+```{r}
+datadirectory <- file.path("D:\\Pitt_3")
+comb_data_exp <- read.csv(file.path(datadirectory, "Comb_1.csv"))
+comb_data_resp <- read.csv(file.path(datadirectory, "Comb_2.csv"))
+RPPA_names <- read.csv(file.path(datadirectory, "CCLE_RPPA_Ab_info_20181226.csv"))
+```
+
+```{r}
+comb_data_exp
+```
+
+```{r}
+comb_data_resp
+```
+```{r}
+colnames(comb_data_resp) = c("GATA3", "ZNF148", "TUBB", "CCLE_Name")
+```
+
+```{r}
+protein <- c("GATA3", "AR", "MEK1", "PDK1", "Notch1", "p90RSK_Caution")
+```
+
+```{r}
+comb_data_exp <- select(comb_data_exp, protein)
+```
+```{r}
+comb_data_exp
+```
+
+```{r}
+target_genes <- rep('a', 6)
+```
+
+```{r}
+target_genes
+```
+```{r}
+for (i in 1:length(target_genes)) {
+  target_genes[i] <- RPPA_names$Target_Genes[which(RPPA_names$Antibody_Name == names(comb_data_exp)[i])]
+}
+```
+
+```{r}
+target_genes
+```
+
+```{r}
+info_table <- cbind(protein, target_genes)
+```
+
+```{r}
+info_table <- data.frame(info_data)
+```
+
+```{r}
+info_data
+```
+
+```{r}
+write.csv(comb_data_resp, file = "D:\\Pitt_2\\Cancer_dependency\\resp.csv")
+write.csv(comb_data_exp, file = "D:\\Pitt_2\\Cancer_dependency\\exp.csv")
+write.csv(info_table, file = "D:\\Pitt_2\\Cancer_dependency\\info.csv")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
